@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react"
 
-const endpoint = 'https://script.google.com/macros/s/AKfycbzRBvKNk65ZwN0H37adUcSl5SO2n4iV_SgMUOPHrYGqk2ZGhWb5xlVDoMEyPodmjtIs/exec'
+const endpoint = 'https://script.google.com/macros/s/AKfycbxWTIyT-Deqz4rqgDIpncj7DBolfyduXlY2EwPXGlbchyoeahdp1r5klExOVvwtNEts/exec'
 
 export default function StudyWithMe() {
     const router = useRouter();

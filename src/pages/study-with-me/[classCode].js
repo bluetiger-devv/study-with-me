@@ -2,12 +2,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react"
 
-const endpoint = 'https://script.google.com/macros/s/AKfycbyQiPjSWnLoAQXWf_umft9IJ2RkqJ_ZHUVonkaBapIjGhXpOGqPvK8dUHsnjPql_c8o/exec'
+const endpoint = 'https://script.google.com/macros/s/AKfycbzRBvKNk65ZwN0H37adUcSl5SO2n4iV_SgMUOPHrYGqk2ZGhWb5xlVDoMEyPodmjtIs/exec'
 
 export default function StudyWithMe() {
     const router = useRouter();
 
     const [studentsByClassCode, setStudentsByClassCode] = useState({})
+    const [classByCode, setClassByCode] = useState({})
     const [viewMode, setViewMode] = useState('all')
     
     useEffect(() => {
@@ -15,6 +16,7 @@ export default function StudyWithMe() {
             .then((res) => res.json())
             .then((data) => {
                 setStudentsByClassCode(data.studentsByClassCode)
+                setClassByCode(data.classByCode)
             })
     }, [])
 
@@ -37,14 +39,17 @@ export default function StudyWithMe() {
             <div className="container-fluid">
                 <h1 className="title text-center mt-2 mb-3">STUDY WITH ME 마일리지</h1>
 
+                <div className="d-flex mb-2">
+                    <div className="btn-group btn-group-sm">
+                        <button type="button" className={'btn btn-outline-secondary' + (viewMode === 'all' ? ' active': '')} onClick={() => setViewMode('all')}>누적</button>
+                        <button type="button" className={'btn btn-outline-secondary' + (viewMode === 'week' ? ' active': '')} onClick={() => setViewMode('week')}>이번주</button>
+                    </div>
+                </div>                
+
                 <div className="row">
+
                     <div className="col-md-9">
-                        <div className="mb-2">
-                            <div className="btn-group btn-group-sm">
-                                <button type="button" className={'btn btn-outline-secondary' + (viewMode === 'all' ? ' active': '')} onClick={() => setViewMode('all')}>누적</button>
-                                <button type="button" className={'btn btn-outline-secondary' + (viewMode === 'week' ? ' active': '')} onClick={() => setViewMode('week')}>이번주</button>
-                            </div>
-                        </div>
+
                         <table className="content-table table table-striped">
                             <thead>
                                 <tr>
@@ -70,15 +75,16 @@ export default function StudyWithMe() {
                             </tbody>
                         </table>
                     </div>
+                    
                     <div className="col-md-3">
                         <div>
-                            <h4>클래스 목록</h4>
+                            <h5>클래스 목록</h5>
                             <ul className="list-group">
                             {
                                 Object.keys(studentsByClassCode).map(classCode => {
                                     return (
                                         <li key={classCode} className={'list-group-item list-group-item-action' + (router.query.classCode == classCode ? ' active': '')}>
-                                            <Link key={classCode} href={`/study-with-me/${classCode}`} className="link">{classCode}</Link>
+                                            <Link key={classCode} href={`/study-with-me/${classCode}`} className="link">{classByCode[classCode]}</Link>
                                         </li>
                                     )
                                 })
@@ -86,6 +92,7 @@ export default function StudyWithMe() {
                             </ul>
                         </div>
                     </div>
+
                 </div>
             </div>
            

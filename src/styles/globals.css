@@ -1,0 +1,18 @@
+.swm .content-table {
+  font-size: 14px;
+}
+
+.swm .active .link {
+  color: #fff;
+}
+
+
+.swm .list-group-item {
+  padding: 0;
+}
+
+.swm .link {
+  display: block;
+  padding: 4px 10px;
+  text-decoration: none;
+}

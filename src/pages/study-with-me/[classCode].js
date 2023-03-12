@@ -83,7 +83,7 @@ export default function StudyWithMe() {
                             {
                                 Object.keys(studentsByClassCode).map(classCode => {
                                     return (
-                                        <li key={classCode} className={'list-group-item list-group-item-action' + (router.query.classCode == classCode ? ' active': '')}>
+                                        <li key={classCode} className={'list-group-item list-group-item-light list-group-item-action' + (router.query.classCode == classCode ? ' active': '')}>
                                             <Link key={classCode} href={`/study-with-me/${classCode}`} className="link">{classByCode[classCode]}</Link>
                                         </li>
                                     )

@@ -7,7 +7,7 @@ export default function StudentMileage({ name, mileage, studySeconds, classSubNa
     }
 
     return (
-        <tr className={{'rank1': rank === 1, 'rank2': rank === 2, 'rank3': rank === 3}}>
+        <tr className={`rank${rank}`}>
             <td>{name}</td>
             <td>{mileage}</td>
             <td>{convertSeconds(studySeconds)}</td>

@@ -55,7 +55,7 @@ export default function StudyWithMe() {
                             <thead>
                                 <tr>
                                     <th>이름</th>
-                                    <th>마일리지</th>
+                                    <th style={{textAlign: 'center'}}>마일리지</th>
                                     <th>참여시간</th>
                                     <th>반</th>
                                     <th>멘토</th>

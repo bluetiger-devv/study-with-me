@@ -64,7 +64,8 @@ export default function StudyWithMe() {
                             </thead>
                             <tbody>
                                 {studentsByClassCode[router.query.classCode]?.sort(sort).map((item, index) => {
-                                    return <StudentMileage name={item.name} 
+                                    return <StudentMileage key={index} 
+                                                           name={item.name} 
                                                            mileage={item.mileage[viewMode].mileage}
                                                            studySeconds={item.mileage[viewMode].studySeconds}
                                                            classSubName={item.classSubName}

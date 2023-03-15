@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react"
+import StudentMileage from '../../components/StudentMileage'
+
 
 const endpoint = 'https://script.google.com/macros/s/AKfycbxWTIyT-Deqz4rqgDIpncj7DBolfyduXlY2EwPXGlbchyoeahdp1r5klExOVvwtNEts/exec'
 
@@ -62,15 +64,13 @@ export default function StudyWithMe() {
                             </thead>
                             <tbody>
                                 {studentsByClassCode[router.query.classCode]?.sort(sort).map((item, index) => {
-                                    return (
-                                        <tr key={index}>
-                                            <td>{item.name}</td>
-                                            <td>{item.mileage[viewMode].mileage}</td>
-                                            <td>{convertSeconds(item.mileage[viewMode].studySeconds)}</td>
-                                            <td>{item.classSubName}</td>
-                                            <td>{item.mentor}</td>
-                                        </tr>
-                                    )
+                                    return <StudentMileage name={item.name} 
+                                                           mileage={item.mileage[viewMode].mileage}
+                                                           studySeconds={item.mileage[viewMode].studySeconds}
+                                                           classSubName={item.classSubName}
+                                                           mentor={item.mentor}
+                                                           rank={index + 1}
+                                                           />
                                 })}
                             </tbody>
                         </table>

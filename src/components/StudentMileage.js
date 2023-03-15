@@ -9,7 +9,7 @@ export default function StudentMileage({ name, mileage, studySeconds, classSubNa
     return (
         <tr className={`rank${rank}`}>
             <td>{name}</td>
-            <td>{mileage}</td>
+            <td style="text-align:center">{mileage}</td>
             <td>{convertSeconds(studySeconds)}</td>
             <td>{classSubName}</td>
             <td>{mentor}</td>

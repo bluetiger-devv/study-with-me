@@ -19,14 +19,14 @@
   color: var(--bs-body-color);
 }
 
-.swm .rank1 {
-  color: #5882FA;
+.swm .rank1 > td {
+  color: #5882FA !important;
 }
 
-.swm .rank2 {
-  color: #facc2e;
+.swm .rank2 > td {
+  color: #facc2e !important;
 }
 
-.swm .rank3 {
-  color: #BCF5A9
+.swm .rank3 > td {
+  color: #BCF5A9 !important
 }

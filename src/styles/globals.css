@@ -18,3 +18,15 @@
   font-size: 14px;
   color: var(--bs-body-color);
 }
+
+.swm .rank1 {
+  color: #5882FA;
+}
+
+.swm .rank2 {
+  color: #facc2e;
+}
+
+.swm .rank3 {
+  color: #BCF5A9
+}

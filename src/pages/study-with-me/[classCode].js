@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import StudentMileage from '../../components/StudentMileage'
 
 
-const endpoint = 'https://script.google.com/macros/s/AKfycbxWTIyT-Deqz4rqgDIpncj7DBolfyduXlY2EwPXGlbchyoeahdp1r5klExOVvwtNEts/exec'
+const endpoint = 'https://script.google.com/a/macros/feedbluetiger.com/s/AKfycbzSL3ZqGzeaB6owgdFcYshRXLSIxJT5xrHmm76aXcdti0Jv2E324VK6SH9Yma-SiP1N/exec'
 
 export default function StudyWithMe() {
     const router = useRouter();

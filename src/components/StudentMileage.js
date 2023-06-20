@@ -2,7 +2,7 @@ export default function StudentMileage({ name, mileage, studySeconds, classSubNa
 
     const convertSeconds = seconds => {
         const hours = Math.floor(seconds / 3600)
-        const minutes = Math.floor(seconds / 60)
+        const minutes = Math.floor(seconds % 3600 / 60)
         return `${hours}시간 ${minutes}분`
     }
 
